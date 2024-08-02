@@ -12,7 +12,7 @@ const greet = document.querySelector(".greet");
 // creating accounts in javascript because no back-end used !
 // using weak password to enter faster while testing
 const abdullah = {
-  email: "a",
+  email: "abdullah@maingroup.com",
   password: 111,
   tasks: ["study web", "go to work", "sleep"],
   owner: "Abdullah",
