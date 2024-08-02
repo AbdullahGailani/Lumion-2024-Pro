@@ -4,119 +4,63 @@
 }
 
 /* ////////////// */
-.form {
-  background-color: #fff;
-  display: block;
-  padding: 1rem;
-  max-width: 350px;
-  border-radius: 0.5rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
 
-.form-title {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-  font-weight: 600;
-  text-align: center;
-  color: #000;
-}
-
-.input-container {
-  position: relative;
-}
-
-.input-container input,
-.form button {
-  outline: none;
-  border: 1px solid #e5e7eb;
-  margin: 8px 0;
-}
-
-.input-container input {
-  background-color: #fff;
-  padding: 1rem;
-  padding-right: 3rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  width: 300px;
-  border-radius: 0.5rem;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-}
-
-.input-container span {
-  display: grid;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  place-content: center;
-}
-
-.input-container span svg {
-  color: #9ca3af;
-  width: 1rem;
-  height: 1rem;
-}
-
-.submit {
-  display: block;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-  background-color: #4f46e5;
-  color: #ffffff;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  font-weight: 500;
-  width: 100%;
-  border-radius: 0.5rem;
-  text-transform: uppercase;
-}
-
-.signup-link {
-  color: #6b7280;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  text-align: center;
-}
-
-.signup-link a {
-  text-decoration: underline;
-}
 /* ////////////// */
 body {
   font-family: "Roboto", sans-serif;
-  height: 100vh;
-  background: linear-gradient(to top left, #8f64ee, #c85ffa);
+  /* background: linear-gradient(to top left, #8f64ee, #c85ffa); */
+  background-image: url(./images/main.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
+  height: 100vh;
+  flex-direction: row;
   align-items: center;
+  transition: 0.5s;
+  align-items: center;
+  gap: 50px;
 }
 
 .container {
-  background-color: white;
-  width: 47rem;
+  background-color: hsla(0, 0%, 100%, 0.853);
+  width: 50%;
   margin: 0 auto;
-  height: 700px;
+  height: 35rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 50px;
   overflow: auto;
-  padding: 10px;
+  padding: 20px;
   box-shadow: 0 0 10px 0 white;
   border-radius: 25px;
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  transition: 0.5s;
+}
+.hidden__container--1 {
+  transform: translateX(40%);
+  opacity: 0;
+}
+.hidden__container--2 {
+  transform: translateX(-40%);
+  opacity: 0;
+}
+.container--active {
+  z-index: 1;
+  opacity: 1;
+  transform: none;
 }
 .title {
-  font-size: 48px;
+  font-size: 36px;
   text-align: center;
-}
-.title span {
   letter-spacing: 0px;
   font-weight: 700;
+}
+.date {
+  font-size: 24px;
 }
 .add_new_task {
   width: 80%;
@@ -126,20 +70,23 @@ body {
   justify-content: space-between;
 }
 .input {
-  padding: 15px 10px;
+  padding: 10px 15px;
   width: 70%;
-  font-size: 30px;
+  font-size: 24px;
   outline: none;
   border: 0.5px solid grey;
+  border: none;
+  border-bottom: 1px solid grey;
 }
 .btn {
   background-color: none;
   background: linear-gradient(to top left, #8f64ee, #c85ffa);
-  padding: 15px 40px;
-  font-size: 30px;
+  padding: 7.5px 20px;
+  font-size: 18px;
+  height: 50px;
+  width: 110px;
   color: white;
   border: none;
-  margin-left: 10px;
   cursor: pointer;
 }
 .btn:hover {
@@ -150,6 +97,7 @@ body {
 }
 .tasks {
   width: 80%;
+  height: 80%;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -157,7 +105,7 @@ body {
 .task {
   display: flex;
   flex-direction: row;
-  font-size: 30px;
+  font-size: 18px;
   align-items: center;
   justify-content: space-between;
   border-bottom: 0.1px solid grey;
@@ -169,16 +117,16 @@ body {
   gap: 10px;
 }
 .btns button {
-  padding: 10px 30px;
+  padding: 10px 20px;
   border: none;
   cursor: pointer;
   background-color: none;
   background: linear-gradient(to top left, #8f64ee, #c85ffa);
   color: white;
-  font-size: 10px;
+  font-size: 5px;
 }
 .btns button p {
-  font-size: 18px;
+  font-size: 10px;
 }
 .btns button:hover {
   background: linear-gradient(to top left, #7c55ce, #af52da);
@@ -190,16 +138,87 @@ body {
 .task__finished {
   text-decoration: line-through;
 }
-.date {
-  font-size: 35px;
-}
-.container--hidden {
-  display: none;
-}
+
 .login {
   margin: 0 auto;
+  z-index: 0;
 }
 .submit {
   cursor: pointer;
 }
 /* ///////////////////////// */
+
+.form {
+  width: 20rem;
+  height: 15rem;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 10px;
+  box-shadow: 0 0 10px 0 white;
+  border-radius: 10px;
+  background-color: hsla(0, 0%, 100%, 0.853);
+}
+.title-login {
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0px;
+}
+.input-container {
+  flex-direction: row;
+  gap: 10px;
+  position: relative;
+}
+.input-container input {
+  padding: 10px 10px;
+  width: 299px;
+  outline: none;
+  border: none;
+  border-bottom: 0.4px solid grey;
+}
+.icon {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 20px;
+}
+.login--btn {
+  width: 100%;
+  padding: 7px;
+  font-size: 20px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  background-color: none;
+  background: linear-gradient(to top left, #8f64ee, #c85ffa);
+  color: white;
+}
+.login--btn:hover {
+  background: linear-gradient(to top left, #825ad6, #b454e0);
+}
+.login--btn:active {
+  background: linear-gradient(to top left, #6f4db8, #9d49c4);
+}
+.form p {
+  text-align: center;
+}
+.btn--finished {
+  background: linear-gradient(to top left, #8f64ee, #c85ffa);
+  color: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  letter-spacing: 0;
+  border: none;
+  cursor: pointer;
+}
+.no--task {
+  margin: 0 auto;
+}
+.container--hidden {
+  display: none;
+}

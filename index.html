@@ -20,7 +20,7 @@
     <title>To-Do</title>
   </head>
   <body>
-    <div class="container container--hidden">
+    <div class="container container--1 hidden__container--1">
       <div class="title">
         <span class="greet">Tasks</span>
         <br />
@@ -54,67 +54,62 @@
           </div>
         </div>
       </div>
+      <div class="finished--tasks">
+        <button class="btn--finished change--container">
+          Finished Tasks <img src="./images/right.svg" alt="" />
+        </button>
+      </div>
     </div>
 
     <!--  -->
-
+    <div class="container container--2 hidden__container--2">
+      <div class="title">
+        <span class="greet">Finished Tasks</span>
+        <br />
+        <span class="date"> (12/ FEB/ 2024) </span>
+      </div>
+      <div class="tasks tasks--finish">
+        <div class="task">
+          <p class="no--task">No task Has been finished</p>
+        </div>
+      </div>
+      <div class="finished--tasks">
+        <button class="btn--finished change--container">
+          Tasks <img src="./images/right.svg" alt="" />
+        </button>
+      </div>
+    </div>
     <!--  -->
 
     <div class="login">
-      <form class="form">
-        <p class="form-title">Sign in to your account</p>
+      <form action="#" class="form">
+        <p class="title-login">Sign In to your account</p>
         <div class="input-container">
-          <input placeholder="Enter email" type="email" class="email" />
-          <span>
-            <svg
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
-                stroke-width="2"
-                stroke-linejoin="round"
-                stroke-linecap="round"
-              ></path>
-            </svg>
-          </span>
+          <input
+            type="text"
+            name=""
+            id="email"
+            class="email"
+            placeholder="Email"
+          />
         </div>
         <div class="input-container">
           <input
-            placeholder="Enter password"
-            type="password"
+            type="text"
+            name=""
+            id="password"
             class="password"
+            placeholder="Password"
           />
-
-          <span>
-            <svg
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                stroke-width="2"
-                stroke-linejoin="round"
-                stroke-linecap="round"
-              ></path>
-              <path
-                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                stroke-width="2"
-                stroke-linejoin="round"
-                stroke-linecap="round"
-              ></path>
-            </svg>
-          </span>
+          <label for="password" class="icon"
+            ><a href="#"><i class="fa-solid fa-eye-slash"></i></a
+          ></label>
         </div>
-        <button class="submit login--btn" type="submit">Sign in</button>
 
-        <p class="signup-link">
-          No account?
-          <a href="./test-acc.html" target="_blank">Use this</a>
+        <button class="login--btn">Login</button>
+
+        <p>
+          Need Account ? <a href="./test-acc.html" target="_blank">use this</a>
         </p>
       </form>
     </div>
