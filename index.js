@@ -100,7 +100,7 @@ const updateFinishTasks = function (account) {
     <div class="task">
        <p class="t">${task}</p>
        <div class="btns">
-          <button class="remove">
+          <button class="remove rm-Finish">
           <i
              class="fa-solid fa-x"
              style="color: #ffffff; font-size: 20px"
@@ -134,6 +134,20 @@ const updateLast = function (account) {
      </div>
   </div>
   `;
+  tasksContainer.insertAdjacentHTML("afterbegin", html);
+};
+
+const emptyFinishTaskAlert = function () {
+  const html = `<div class="task">
+                   <p class="no--task">No task Has been finished</p>
+                </div>`;
+  tasksContainerFinish.insertAdjacentHTML("afterbegin", html);
+};
+
+const emptyTaskAlert = function () {
+  const html = `<div class="task">
+                   <p class="no--task">Add new task to get start!</p>
+                </div>`;
   tasksContainer.insertAdjacentHTML("afterbegin", html);
 };
 
@@ -222,7 +236,7 @@ loginBtn.addEventListener("click", function (e) {
 
 //using event delegation
 
-const containerEvenListener = function (e) {
+tasksContainer.addEventListener("click", function (e) {
   e.preventDefault();
   if (e.target.closest(".done")) {
     const finish = e.target.closest(".task").querySelector("p").textContent;
@@ -232,12 +246,36 @@ const containerEvenListener = function (e) {
     updateFinishTasks(activeAccount);
   }
   if (e.target.closest(".remove")) {
+    if (e.target.classList.contains("remove")) {
+      const a = e.target.closest(".task").querySelector("p").textContent;
+      const index = activeAccount.finishTasks.indexOf(a);
+      activeAccount.tasks.splice(index, 1);
+      console.log(activeAccount.tasks.length);
+      activeAccount.tasks.length === 0 ? emptyTaskAlert() : "";
+    }
     e.target.closest(".task").remove();
   }
-};
+});
 
-tasksContainer.addEventListener("click", containerEvenListener);
-finishTaskContainer.addEventListener("click", containerEvenListener);
+finishTaskContainer.addEventListener("click", function (e) {
+  e.preventDefault();
+  if (e.target.closest(".done")) {
+    const finish = e.target.closest(".task").querySelector("p").textContent;
+    e.target.closest(".task").remove();
+    activeAccount.finishTasks.push(finish);
+
+    updateFinishTasks(activeAccount);
+  }
+  if (e.target.closest(".remove")) {
+    if (e.target.classList.contains("rm-Finish")) {
+      const a = e.target.closest(".task").querySelector("p").textContent;
+      const index = activeAccount.finishTasks.indexOf(a);
+      activeAccount.finishTasks.splice(index, 1);
+      activeAccount.finishTasks.length === 0 ? emptyFinishTaskAlert() : "";
+    }
+    e.target.closest(".task").remove();
+  }
+});
 
 addBtn.addEventListener("click", function (e) {
   e.preventDefault();
