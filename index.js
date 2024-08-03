@@ -38,8 +38,6 @@ const abdullah = new Account(
   []
 );
 
-console.log(abdullah.finishTasks);
-
 const sabr = new Account(
   "sabr@maingroup.com",
   222,
@@ -67,8 +65,9 @@ const shkar = new Account(
 const accounts = [abdullah, sabr, ayad, shkar];
 
 //functions
-const updateTasks = function (account) {
+const updateTasksContainer = function (account) {
   tasksContainer.innerHTML = "";
+
   account.tasks.forEach((task) => {
     const html = `
     <div class="task">
@@ -93,7 +92,7 @@ const updateTasks = function (account) {
   });
 };
 
-const updateFinishTasks = function (account) {
+const updateFinishTasksContainer = function (account) {
   tasksContainerFinish.innerHTML = "";
   account.finishTasks.forEach((task) => {
     const html = `
@@ -112,9 +111,10 @@ const updateFinishTasks = function (account) {
     tasksContainerFinish.insertAdjacentHTML("afterbegin", html);
   });
 };
+
 // adding element to last item in arry
 
-const updateLast = function (account) {
+const updateLastInArrey = function (account) {
   const html = `
   <div class="task">
      <p class="t">${account.tasks[account.tasks.length - 1]}</p>
@@ -162,7 +162,6 @@ const greeting = function (acconut) {
     greet.textContent = `Good Evening, ${acconut.owner}`;
   }
 
-  console.log(hours);
   const shortMonths = [
     "Jan",
     "Feb",
@@ -207,7 +206,7 @@ const switchUI = function (container) {
 };
 
 const updateUI = function () {
-  updateTasks(activeAccount);
+  updateTasksContainer(activeAccount);
   greeting(activeAccount);
 
   taskContainer.classList.remove("hidden__container--1");
@@ -242,15 +241,15 @@ tasksContainer.addEventListener("click", function (e) {
     const finish = e.target.closest(".task").querySelector("p").textContent;
     e.target.closest(".task").remove();
     activeAccount.finishTasks.push(finish);
-
-    updateFinishTasks(activeAccount);
+    updateFinishTasksContainer(activeAccount);
+    activeAccount.tasks.length === 0 ? emptyTaskAlert() : "";
+    console.log(activeAccount.tasks.length);
   }
   if (e.target.closest(".remove")) {
     if (e.target.classList.contains("remove")) {
       const a = e.target.closest(".task").querySelector("p").textContent;
       const index = activeAccount.finishTasks.indexOf(a);
       activeAccount.tasks.splice(index, 1);
-      console.log(activeAccount.tasks.length);
       activeAccount.tasks.length === 0 ? emptyTaskAlert() : "";
     }
     e.target.closest(".task").remove();
@@ -264,7 +263,7 @@ finishTaskContainer.addEventListener("click", function (e) {
     e.target.closest(".task").remove();
     activeAccount.finishTasks.push(finish);
 
-    updateFinishTasks(activeAccount);
+    updateFinishTasksContainer(activeAccount);
   }
   if (e.target.closest(".remove")) {
     if (e.target.classList.contains("rm-Finish")) {
@@ -280,7 +279,7 @@ finishTaskContainer.addEventListener("click", function (e) {
 addBtn.addEventListener("click", function (e) {
   e.preventDefault();
   activeAccount.tasks.push(inputNewTask.value);
-  updateLast(activeAccount);
+  updateLastInArrey(activeAccount);
   inputNewTask.value = "";
 });
 
