@@ -224,14 +224,14 @@ body {
 }
 @media (max-width: 2560px) {
   .form {
-    transform: scale(1);
+    transform: scale(1.2);
   }
   .container {
-    transform: scale(1);
+    transform: scale(1.2);
   }
 }
 
-@media (max-width: 1441px) {
+@media (max-width: 1440px) {
   .form {
     transform: scale(1);
   }
@@ -240,7 +240,7 @@ body {
   }
 }
 
-@media (max-width: 1025px) {
+@media (max-width: 1024px) {
   .form {
     transform: scale(1);
   }
@@ -251,7 +251,7 @@ body {
   }
 }
 
-@media (max-width: 769px) {
+@media (max-width: 768px) {
   .form {
     transform: scale(1);
   }
@@ -262,7 +262,7 @@ body {
   }
 }
 
-@media (max-width: 426px) {
+@media (max-width: 425px) {
   .form {
     transform: scale(1);
   }
