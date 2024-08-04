@@ -267,7 +267,7 @@ body {
     transform: scale(1);
   }
   .container {
-    width: 200px !important;
+    width: 300px !important;
     transform: scale(1);
     left: 0px;
     float: left;
