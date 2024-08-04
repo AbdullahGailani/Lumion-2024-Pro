@@ -20,100 +20,102 @@
     <title>To-Do</title>
   </head>
   <body>
-    <div class="container container--1 hidden__container--1">
-      <div class="title">
-        <span class="greet">Tasks</span>
-        <br />
-        <span class="date"> (12/ FEB/ 2024) </span>
-      </div>
-      <div class="add_new_task">
-        <input
-          class="input"
-          type="text"
-          id="add_new_task"
-          placeholder="Add new task"
-        />
-        <label for="add_new_task"><button class="btn add">Add</button></label>
-      </div>
-      <div class="tasks">
-        <div class="task">
-          <p class="t">Create Website</p>
-          <div class="btns">
-            <button class="done">
-              <i
-                class="fa-solid fa-check"
-                style="color: #ffffff; font-size: 20px"
-              ></i>
-            </button>
-            <button class="remove">
-              <i
-                class="fa-solid fa-x"
-                style="color: #ffffff; font-size: 20px"
-              ></i>
-            </button>
+    <div class="container">
+      <div class="section section--1 hidden__section">
+        <div class="title">
+          <span class="greet">Tasks</span>
+          <br />
+          <span class="date"> (12/ FEB/ 2024) </span>
+        </div>
+        <div class="add_new_task">
+          <input
+            class="input"
+            type="text"
+            id="add_new_task"
+            placeholder="Add new task"
+          />
+          <label for="add_new_task"><button class="btn add">Add</button></label>
+        </div>
+        <div class="tasks">
+          <div class="task">
+            <p class="task_content">Create Website</p>
+            <div class="task__btns">
+              <button class="done">
+                <i
+                  class="fa-solid fa-check"
+                  style="color: #ffffff; font-size: 20px"
+                ></i>
+              </button>
+              <button class="remove">
+                <i
+                  class="fa-solid fa-x"
+                  style="color: #ffffff; font-size: 20px"
+                ></i>
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="finished--tasks">
-        <button class="btn--finished change--container">
-          Finished Tasks <img src="./images/right.svg" alt="" />
-        </button>
-      </div>
-    </div>
-
-    <!--  -->
-    <div class="container container--2 hidden__container--2">
-      <div class="title">
-        <span class="greet">Finished Tasks</span>
-        <br />
-        <span class="date"> (12/ FEB/ 2024) </span>
-      </div>
-      <div class="tasks tasks--finish">
-        <div class="task">
-          <p class="no--task">No task Has been finished</p>
+        <div class="switch-btn-container">
+          <button class="switch-btn">
+            Finished Tasks <img src="./images/right.svg" alt="" />
+          </button>
         </div>
       </div>
-      <div class="finished--tasks">
-        <button class="btn--finished change--container">
-          Tasks <img src="./images/right.svg" alt="" />
-        </button>
+
+      <!--  -->
+      <div class="section section--2 hidden__section">
+        <div class="title">
+          <span class="greet">Finished Tasks</span>
+          <br />
+          <span class="date"> (12/ FEB/ 2024) </span>
+        </div>
+        <div class="tasks tasks--finish">
+          <div class="task">
+            <p class="no--task">No task Has been finished</p>
+          </div>
+        </div>
+        <div class="switch-btn-container">
+          <button class="switch-btn">
+            Tasks <img src="./images/right.svg" alt="" />
+          </button>
+        </div>
+      </div>
+      <!--  -->
+
+      <div class="login">
+        <form action="#" class="form">
+          <p class="title-login">Sign In to your account</p>
+          <div class="input-container">
+            <input
+              type="text"
+              name=""
+              id="email"
+              class="email"
+              placeholder="Email"
+            />
+          </div>
+          <div class="input-container">
+            <input
+              type="text"
+              name=""
+              id="password"
+              class="password"
+              placeholder="Password"
+            />
+            <label for="password" class="icon"
+              ><a href="#"><i class="fa-solid fa-eye-slash"></i></a
+            ></label>
+          </div>
+
+          <button class="login--btn">Login</button>
+
+          <p>
+            Need Account ?
+            <a href="./test-acc.html" target="_blank">use this</a>
+          </p>
+        </form>
       </div>
     </div>
-    <!--  -->
-
-    <div class="login">
-      <form action="#" class="form">
-        <p class="title-login">Sign In to your account</p>
-        <div class="input-container">
-          <input
-            type="text"
-            name=""
-            id="email"
-            class="email"
-            placeholder="Email"
-          />
-        </div>
-        <div class="input-container">
-          <input
-            type="text"
-            name=""
-            id="password"
-            class="password"
-            placeholder="Password"
-          />
-          <label for="password" class="icon"
-            ><a href="#"><i class="fa-solid fa-eye-slash"></i></a
-          ></label>
-        </div>
-
-        <button class="login--btn">Login</button>
-
-        <p>
-          Need Account ? <a href="./test-acc.html" target="_blank">use this</a>
-        </p>
-      </form>
-    </div>
-
     <script src="./index.js"></script>
   </body>
 </html>

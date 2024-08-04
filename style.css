@@ -8,44 +8,42 @@
 /* ////////////// */
 body {
   font-family: "Roboto", sans-serif;
-  /* background: linear-gradient(to top left, #8f64ee, #c85ffa); */
   background-image: url(./images/main.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
-  height: 100vh;
+  align-items: center;
+  height: 90vh;
   background-color: #282f39;
   flex-direction: row;
-  align-items: center;
   transition: 0.5s;
-  align-items: center;
 }
-
 .container {
-  background-color: hsla(0, 0%, 100%, 0.853);
-  width: 700px !important;
   margin: 0 auto;
-  height: 35rem;
+  width: 60rem;
+  height: 40rem;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.section {
+  background-color: hsla(0, 0%, 100%, 0.853);
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 50px;
   overflow: auto;
-  padding: 20px;
   box-shadow: 0 0 10px 0 white;
   border-radius: 25px;
   position: absolute;
-  left: 25%;
-  right: 25%;
+
   transition: 0.5s;
 }
-.hidden__container--1 {
-  transform: translateX(40%);
-  opacity: 0;
-}
-.hidden__container--2 {
-  transform: translateX(-40%);
+.hidden__section {
   opacity: 0;
 }
 .container--active {
@@ -55,6 +53,7 @@ body {
 }
 .title {
   font-size: 36px;
+  margin-top: 20px;
   text-align: center;
   letter-spacing: 0px;
   font-weight: 700;
@@ -105,18 +104,18 @@ body {
 .task {
   display: flex;
   flex-direction: row;
-  font-size: 18px;
+  font-size: 22px;
   align-items: center;
   justify-content: space-between;
   border-bottom: 0.1px solid grey;
   padding: 5px;
 }
-.btns {
+.task__btns {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-.btns button {
+.task__btns button {
   padding: 10px 20px;
   border: none;
   cursor: pointer;
@@ -125,13 +124,13 @@ body {
   color: white;
   font-size: 5px;
 }
-.btns button p {
+.task__btns button p {
   font-size: 10px;
 }
-.btns button:hover {
+.task__btns button:hover {
   background: linear-gradient(to top left, #7c55ce, #af52da);
 }
-.btns button:active {
+.task__btns button:active {
   background: linear-gradient(to top left, #53398b, #7c3a9a);
 }
 
@@ -159,6 +158,7 @@ body {
   box-shadow: 0 0 10px 0 white;
   border-radius: 10px;
   background-color: hsla(0, 0%, 100%, 0.853);
+  transform: scale(1.5);
 }
 .title-login {
   margin-bottom: 2rem;
@@ -205,7 +205,7 @@ body {
 .form p {
   text-align: center;
 }
-.btn--finished {
+.switch-btn {
   background: linear-gradient(to top left, #8f64ee, #c85ffa);
   color: white;
   padding: 10px;
@@ -215,6 +215,7 @@ body {
   letter-spacing: 0;
   border: none;
   cursor: pointer;
+  margin-bottom: 20px;
 }
 .no--task {
   margin: 0 auto;
@@ -222,88 +223,9 @@ body {
 .container--hidden {
   display: none;
 }
-@media (max-width: 2560px) {
-  .form {
-    transform: scale(1.2);
-  }
-  .container {
-    transform: scale(1.2);
-  }
-}
 
-@media (max-width: 1440px) {
-  .form {
-    transform: scale(1);
-  }
-  .container {
-    transform: scale(1);
-  }
-}
-
-@media (max-width: 1024px) {
-  .form {
-    transform: scale(1);
-  }
-  .container {
-    transform: scale(1);
-    left: 0;
-    right: 0;
-  }
-}
-
-@media (max-width: 768px) {
-  .form {
-    transform: scale(1);
-  }
+@media (max-width: 400px) {
   .container {
     transform: scale(0.8);
-    left: 0;
-    right: 0;
   }
 }
-
-@media (max-width: 425px) {
-  .form {
-    transform: scale(1);
-  }
-  .container {
-    width: 300px !important;
-    transform: scale(1);
-    left: 0px;
-    float: left;
-    gap: 20px;
-  }
-  .input {
-    padding: 5px 10px;
-    font-size: 10px;
-    outline: none;
-    border: 0.5px solid grey;
-    border: none;
-    border-bottom: 1px solid grey;
-  }
-  .btn {
-    padding: 4px 10px;
-    font-size: 10px;
-    height: 20px;
-    width: 40px;
-  }
-  .btns {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .btns button {
-    padding: 5px 10px;
-    font-size: 1.5px;
-  }
-  .btns button p {
-    font-size: 5px;
-  }
-  .title {
-    font-size: 26px;
-  }
-  .date {
-    font-size: 14px;
-  }
-}
-/*  */

@@ -7,11 +7,11 @@ const emailInput = document.querySelector(".email");
 const passwordInput = document.querySelector(".password");
 const loginBtn = document.querySelector(".login--btn");
 const loginAppContainer = document.querySelector(".login");
-const taskContainer = document.querySelector(".hidden__container--1");
-const finishTaskContainer = document.querySelector(".hidden__container--2");
+const taskContainer = document.querySelector(".section--1");
+const finishTaskContainer = document.querySelector(".section--2");
 const greet = document.querySelector(".greet");
 const body = document.querySelector("body");
-const changeBtn = document.querySelectorAll(".change--container");
+const changeBtn = document.querySelectorAll(".switch-btn");
 
 // creating accounts in javascript because no back-end used !
 // using weak password to enter faster while testing
@@ -72,7 +72,7 @@ const updateTasksContainer = function (account) {
     const html = `
     <div class="task">
        <p class="t">${task}</p>
-       <div class="btns">
+       <div class="task__btns">
           <button class="done">
           <i
              class="fa-solid fa-check"
@@ -98,7 +98,7 @@ const updateFinishTasksContainer = function (account) {
     const html = `
     <div class="task">
        <p class="t">${task}</p>
-       <div class="btns">
+       <div class="task__btns">
           <button class="remove rm-Finish">
           <i
              class="fa-solid fa-x"
@@ -118,7 +118,7 @@ const updateLastInArrey = function (account) {
   const html = `
   <div class="task">
      <p class="t">${account.tasks[account.tasks.length - 1]}</p>
-     <div class="btns">
+     <div class="task__btns">
         <button class="done">
         <i
            class="fa-solid fa-check"
@@ -185,23 +185,17 @@ const greeting = function (acconut) {
   );
 };
 
-const switchUI = function (container) {
-  taskContainer.classList.add("hidden__container--1");
-  finishTaskContainer.classList.add("hidden__container--2");
+const switchUI = function () {
+  taskContainer.classList.add("hidden__section");
+  finishTaskContainer.classList.add("hidden__section");
   taskContainer.classList.remove("container--active");
   finishTaskContainer.classList.remove("container--active");
 
   activeContainer =
     activeContainer === 1 ? (activeContainer = 2) : (activeContainer = 1);
 
-  console.log(activeContainer);
-
   document
-    .querySelector(`.container--${activeContainer}`)
-    .classList.remove(`hidden__container--${activeContainer}`);
-
-  document
-    .querySelector(`.container--${activeContainer}`)
+    .querySelector(`.section--${activeContainer}`)
     .classList.add(`container--active`);
 };
 
