@@ -15,16 +15,16 @@ body {
   background-size: cover;
   display: flex;
   height: 100vh;
+  background-color: #282f39;
   flex-direction: row;
   align-items: center;
   transition: 0.5s;
   align-items: center;
-  gap: 50px;
 }
 
 .container {
   background-color: hsla(0, 0%, 100%, 0.853);
-  width: 50%;
+  width: 700px !important;
   margin: 0 auto;
   height: 35rem;
   display: flex;
@@ -221,4 +221,88 @@ body {
 }
 .container--hidden {
   display: none;
+}
+@media (max-width: 2560px) {
+  .form {
+    transform: scale(1.5);
+  }
+  .container {
+    transform: scale(1.5);
+  }
+}
+
+@media (max-width: 1441px) {
+  .form {
+    transform: scale(1);
+  }
+  .container {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 1025px) {
+  .form {
+    transform: scale(1);
+  }
+  .container {
+    transform: scale(1);
+    left: 0;
+    right: 0;
+  }
+}
+
+@media (max-width: 769px) {
+  .form {
+    transform: scale(1);
+  }
+  .container {
+    transform: scale(0.8);
+    left: 0;
+    right: 0;
+  }
+}
+
+@media (max-width: 426px) {
+  .form {
+    transform: scale(1);
+  }
+  .container {
+    width: 200px !important;
+    transform: scale(1);
+    left: 0px;
+    float: left;
+    gap: 20px;
+  }
+  .input {
+    padding: 5px 10px;
+    font-size: 10px;
+    outline: none;
+    border: 0.5px solid grey;
+    border: none;
+    border-bottom: 1px solid grey;
+  }
+  .btn {
+    padding: 4px 10px;
+    font-size: 10px;
+    height: 20px;
+    width: 40px;
+  }
+  .btns {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .btns button {
+    padding: 5px 10px;
+    font-size: 1.5px;
+  }
+  .btns button p {
+    font-size: 5px;
+  }
+  .title {
+    font-size: 26px;
+  }
+  .date {
+    font-size: 14px;
+  }
 }
