@@ -23,7 +23,6 @@ body {
   margin: 0 auto;
   width: 60rem;
   height: 40rem;
-  background-color: red;
   display: flex;
   align-items: center;
   position: relative;
@@ -222,6 +221,11 @@ body {
 }
 .container--hidden {
   display: none;
+}
+@media (max-width: 580px) {
+  .form {
+    transform: scale(0.9);
+  }
 }
 
 @media (max-width: 400px) {
