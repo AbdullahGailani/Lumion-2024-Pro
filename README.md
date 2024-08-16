@@ -4,7 +4,7 @@
   <img src="https://img.shields.io/badge/MIT-grey?logo=MIT&logoColor=white&style=for-the-badge" alt="MIT Badge"/>
 </div>
 <h1>Lumion 2024 Pro</h1>
-<p><img src="https://ts2.mm.bing.net/th?q=Pinnacle+Studio+26.0.1.182+Crack+2024+With+License+Key+%5bLatest%5d"/></p>
+<p><img src="https://repository-images.githubusercontent.com/837150544/a67cc7e3-8af4-4d5a-bba7-ed6c8cc8e72f"/></p>
 <h2>Lumion Pro</h2>
 <p><strong>Description: Lumion is a 3D rendering program created specifically for architects and designers.
 Lumion makes it surprisingly easy to personalize your design presentations that would otherwise take hours to create.
