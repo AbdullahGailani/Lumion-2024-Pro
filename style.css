@@ -13,15 +13,16 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
+  flex-direction: column;
+  height: 100vh;
   align-items: center;
-  height: 90vh;
+  justify-content: center;
   background-color: #282f39;
-  flex-direction: row;
   transition: 0.5s;
 }
 .container {
   margin: 0 auto;
-  width: 60rem;
+  width: 50rem;
   height: 40rem;
   display: flex;
   align-items: center;
@@ -34,8 +35,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   gap: 50px;
-  overflow: auto;
   box-shadow: 0 0 10px 0 white;
   border-radius: 25px;
   position: absolute;
@@ -61,46 +62,52 @@ body {
   font-size: 24px;
 }
 .add_new_task {
-  width: 80%;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  width: 80%;
 }
 .input {
+  width: 100%;
   padding: 10px 15px;
-  width: 70%;
   font-size: 24px;
   outline: none;
-  border: 0.5px solid grey;
   border: none;
   border-bottom: 1px solid grey;
 }
 .btn {
-  background-color: none;
-  background: linear-gradient(to top left, #8f64ee, #c85ffa);
-  padding: 7.5px 20px;
+  display: block;
+  height: 100%;
+  width: 100%;
+  padding: 5px 20px;
   font-size: 18px;
-  height: 50px;
-  width: 110px;
+  margin: 0 auto;
+  background-color: #282f39;
+  border: 1px solid #282f39;
   color: white;
-  border: none;
   cursor: pointer;
+  transition: 0.5s;
 }
 .btn:hover {
-  background: linear-gradient(to top left, #7c55ce, #af52da);
+  background-color: #22273050;
+  color: black;
+  border: 1px solid black;
 }
 .btn:active {
-  background: linear-gradient(to top left, #53398b, #7c3a9a);
+  transition: 0s;
+  background-color: #22273017;
+  color: black;
 }
 .tasks {
   width: 80%;
-  height: 80%;
+  height: 200px;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  overflow: auto;
+  overflow-x: hidden;
 }
 .task {
+  width: 100%;
   display: flex;
   flex-direction: row;
   font-size: 22px;
@@ -117,9 +124,9 @@ body {
 .task__btns button {
   padding: 10px 20px;
   border: none;
+  background-color: #282f39;
   cursor: pointer;
   background-color: none;
-  background: linear-gradient(to top left, #8f64ee, #c85ffa);
   color: white;
   font-size: 5px;
 }
@@ -127,10 +134,10 @@ body {
   font-size: 10px;
 }
 .task__btns button:hover {
-  background: linear-gradient(to top left, #7c55ce, #af52da);
+  background-color: #22273050;
 }
 .task__btns button:active {
-  background: linear-gradient(to top left, #53398b, #7c3a9a);
+  background-color: #22273017;
 }
 
 .task__finished {
@@ -140,72 +147,58 @@ body {
 .login {
   margin: 0 auto;
   z-index: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-form {
+  width: 70%;
+  padding: 20px;
+  background-color: hsla(0, 0%, 100%, 0.853);
+  box-shadow: 0 0 10px 0 white;
+  text-align: center;
+  display: flex;
+  gap: 20px;
+  border-radius: 10px;
+  flex-direction: column;
+}
+.login-form input {
+  padding: 10px;
+  outline: none;
+  border: 0.5px solid rgb(85, 84, 84);
+  border-radius: 25px;
+}
+.login--btn {
+  width: 150px;
+  padding: 5px 20px;
+  font-size: 18px;
+  margin: 0 auto;
+  background-color: #282f39;
+  border: 1px solid #282f39;
+  color: white;
+  border: 0.5px solid white;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.login--btn:hover {
+  background-color: #22273050;
+  color: black;
+  border: 1px solid black;
+}
+.login--btn:active {
+  transition: 0s;
+  background-color: #22273017;
+  color: black;
 }
 .submit {
   cursor: pointer;
 }
 /* ///////////////////////// */
 
-.form {
-  width: 20rem;
-  height: 15rem;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  gap: 10px;
-  box-shadow: 0 0 10px 0 white;
-  border-radius: 10px;
-  background-color: hsla(0, 0%, 100%, 0.853);
-  transform: scale(1.5);
-}
-.title-login {
-  margin-bottom: 2rem;
-  text-align: center;
-  font-size: 24px;
-  font-weight: 600;
-  letter-spacing: 0px;
-}
-.input-container {
-  flex-direction: row;
-  gap: 10px;
-  position: relative;
-}
-.input-container input {
-  padding: 10px 10px;
-  width: 299px;
-  outline: none;
-  border: none;
-  border-bottom: 0.4px solid grey;
-}
-.icon {
-  position: absolute;
-  top: 5px;
-  right: 10px;
-  font-size: 20px;
-}
-.login--btn {
-  width: 100%;
-  padding: 7px;
-  font-size: 20px;
-  font-weight: 700;
-  border: none;
-  cursor: pointer;
-  background-color: none;
-  background: linear-gradient(to top left, #8f64ee, #c85ffa);
-  color: white;
-}
-.login--btn:hover {
-  background: linear-gradient(to top left, #825ad6, #b454e0);
-}
-.login--btn:active {
-  background: linear-gradient(to top left, #6f4db8, #9d49c4);
-}
-.form p {
-  text-align: center;
-}
 .switch-btn {
-  background: linear-gradient(to top left, #8f64ee, #c85ffa);
+  background-color: #282f39;
   color: white;
   padding: 10px;
   display: flex;
@@ -222,14 +215,18 @@ body {
 .container--hidden {
   display: none;
 }
-@media (max-width: 580px) {
-  .form {
-    transform: scale(0.9);
+@media (max-width: 768px) {
+  .container {
+    width: 30rem;
+    height: 40rem;
   }
 }
-
-@media (max-width: 400px) {
+@media (max-width: 495px) {
+  body {
+    padding: 10px;
+  }
   .container {
-    transform: scale(0.8);
+    width: 100%;
+    height: 80%;
   }
 }
